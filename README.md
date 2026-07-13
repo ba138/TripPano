@@ -64,14 +64,6 @@ open TripPano.xcodeproj
 
 3. Build and run the project using Xcode.
 
-## 📸 Screenshots
-
-> Add screenshots of the application here.
-
-| Home | Details | Booking |
-|------|---------|----------|
-| Screenshot | Screenshot | Screenshot |
-
 ## 🎯 Highlights
 
 - Built entirely with **SwiftUI**
