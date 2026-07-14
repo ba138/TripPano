@@ -111,17 +111,20 @@ struct RegisterView: View {
                         }
                         .frame(maxWidth: .infinity,alignment: .leading)
                         Spacer()
-                        Button {
-                            
-                        } label: {
-                        Text("Register")
-                                .font(.system(size: 15))
-                                .bold()
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity,maxHeight: 55)
-                                .background(AppColors.primary)
-                                .cornerRadius(12)
+                        NavigationLink(destination: Onboarding1View()){
+                            Text("Register")
+                                    .font(.system(size: 15))
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity,maxHeight: 55)
+                                    .background(AppColors.primary)
+                                    .cornerRadius(12)
+
                         }
+//                        NavigationLink {
+//                            Onboarding1View()
+//                        } label:
+
                         
 
                         HStack(spacing: 12) {
@@ -176,5 +179,8 @@ struct RegisterView: View {
 }
 
 #Preview {
-    RegisterView()
+    NavigationStack{
+        RegisterView()
+        
+    }
 }
