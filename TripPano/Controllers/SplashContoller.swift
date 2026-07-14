@@ -1,8 +1,12 @@
-//
-//  SplashContoller.swift
-//  TripPano
-//
-//  Created by Basit Ali on 13/07/2026.
-//
+import SwiftUI
 
-import Foundation
+final class SplashController {
+
+    func startTimer(completion: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            withAnimation(.easeInOut(duration: 0.5)) {
+                completion()
+            }
+        }
+    }
+}
