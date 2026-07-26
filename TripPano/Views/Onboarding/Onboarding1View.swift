@@ -14,7 +14,6 @@ struct Onboarding1View: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150, height: 150)
-            Spacer()
             Text("Profile Setup")
                 .font(.title)
                 .bold()
@@ -23,8 +22,13 @@ struct Onboarding1View: View {
             Text("Lets setup your profile first to know you better")
                 .foregroundColor(AppColors.subTitle)
             Spacer()
+            
+            DividerView(progress: "1")
+            Spacer()
+            
         }.padding(20)
     }
+    
 }
 
 #Preview {

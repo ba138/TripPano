@@ -87,6 +87,8 @@ public enum AppColors {
     public static let fontTitle: Color = Color(hex: 0x1D1D1D) // A teal/green accent
 
     public static let subTitle: Color = Color(hex: 0x999999)
+    public static let white: Color = Color(hex: 0xFFFFFF)
+
     public static let textfield: Color = Color(hex: 0xDEDEDE)
  
 }
@@ -97,6 +99,7 @@ public extension Color {
     static var appPrimary: Color { AppColors.primary }
     static var appSecondary: Color { AppColors.secondary }
     static var fontTitle: Color { AppColors.fontTitle }
+    static var whiteColor: Color { AppColors.white }
 
     static var subTitle: Color { AppColors.subTitle }
     
