@@ -26,6 +26,9 @@ struct Onboarding1View: View {
             DividerView(progress: "1")
             Spacer()
             
+
+
+            
         }.padding(20)
     }
     
