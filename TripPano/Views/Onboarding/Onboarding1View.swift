@@ -120,7 +120,10 @@ struct Onboarding1View: View {
 
 
             
-        }.padding(.horizontal,20)
+        }
+        .navigationBarBackButtonHidden(true)
+            .toolbar(.hidden, for: .navigationBar)
+        .padding(.horizontal,20)
     }
     
 }
