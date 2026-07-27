@@ -152,7 +152,7 @@ struct Onboarding2View: View {
                     }
                     
                 }
-            NavigationLink(destination: Onboarding2View()){
+            NavigationLink(destination: MainView()){
                 Text("Next")
                         .font(.system(size: 15))
                         .bold()
@@ -182,6 +182,8 @@ struct Onboarding2View: View {
 }
 
 #Preview {
-    Onboarding2View()
-}
+    NavigationView {
+        Onboarding2View()
+
+    }}
 
