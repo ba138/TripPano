@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
-
+import PhotosUI
 struct Onboarding2View: View {
     @Environment(\.dismiss) private var dismiss
+    @State private var selectedItem: PhotosPickerItem? = nil
+    @State private var selectedImage: Image? = nil
+    @State private var progress : String = "2"
 
     var body: some View {
         VStack  {
@@ -25,19 +28,37 @@ struct Onboarding2View: View {
                 .foregroundColor(AppColors.subTitle)
             
             
-            DividerView(progress: "2")
+            DividerView(progress: progress)
                 .padding(.vertical)
-            Circle()
-                .frame(width: 200,height: 200)
-                .foregroundColor(Color.gray.opacity(0.3))
-                .overlay {
-                    Image(systemName: "camera")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundColor(AppColors.subTitle)
-
-                        .frame(height: 30)
+            PhotosPicker(selection: $selectedItem, matching: .images) {
+                Circle()
+                    .frame(width: 200, height: 200)
+                    .foregroundColor(Color.gray.opacity(0.3))
+                    .overlay {
+                        if let selectedImage {
+                            selectedImage
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 200, height: 200)
+                                .clipShape(Circle())
+                        } else {
+                            Image(systemName: "camera")
+                                .resizable()
+                                .scaledToFit()
+                                .foregroundColor(AppColors.subTitle)
+                                .frame(height: 30)
+                        }
+                    }
+            }
+            .onChange(of: selectedItem) { oldValue, newValue in
+                Task {
+                    if let data = try? await newValue?.loadTransferable(type: Data.self),
+                       let uiImage = UIImage(data: data) {
+                        selectedImage = Image(uiImage: uiImage)
+                    }
                 }
+               progress = "3"
+            }
             Text("Upload a Photo")
                 .font(.system(size: 20))
                 .bold()
@@ -49,53 +70,81 @@ struct Onboarding2View: View {
                     VStack (alignment : .leading){
                         Text("Preview")
                         HStack(alignment:.bottom){
-                            Circle()
-                                .frame(height: 100)
-                                .foregroundColor(AppColors.subTitle.opacity(0.3))
-                                .overlay {
-                                    Image(systemName: "person")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundColor(AppColors.white)
-
-                                        .frame(height: 40)
-                                }
-                            Circle()
-                                .frame(height: 80)
-                                .foregroundColor(AppColors.subTitle.opacity(0.3))
-                                .overlay {
-                                    Image(systemName: "person")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundColor(AppColors.white)
-
-                                        .frame(height: 30)
-                                }
+                            if let selectedImage {
+                                selectedImage
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 100, height: 100)
+                                    .clipShape(Circle())
+                            } else {
+                                Circle()
+                                    .frame(width: 100, height: 100)
+                                    .foregroundColor(AppColors.subTitle.opacity(0.3))
+                                    .overlay {
+                                        Image(systemName: "person")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .foregroundColor(AppColors.white)
+                                            .frame(height: 40)
+                                    }
+                            }
+                            if let selectedImage {
+                                selectedImage
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 80, height: 80)
+                                    .clipShape(Circle())
+                            } else {
+                                Circle()
+                                    .frame(width: 80, height: 80)
+                                    .foregroundColor(AppColors.subTitle.opacity(0.3))
+                                    .overlay {
+                                        Image(systemName: "person")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .foregroundColor(AppColors.white)
+                                            .frame(height: 30)
+                                    }
+                            }
 
                             
-                            Circle()
-                                .frame(height: 60)
-                                .foregroundColor(AppColors.subTitle.opacity(0.3))
-                                .overlay {
-                                    Image(systemName: "person")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundColor(AppColors.white)
+                            if let selectedImage {
+                                selectedImage
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 60, height: 60)
+                                    .clipShape(Circle())
+                            } else {
+                                Circle()
+                                    .frame(width: 60, height: 60)
+                                    .foregroundColor(AppColors.subTitle.opacity(0.3))
+                                    .overlay {
+                                        Image(systemName: "person")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .foregroundColor(AppColors.white)
+                                            .frame(height: 20)
+                                    }
+                            }
 
-                                        .frame(height: 20)
-                                }
-
-                            Circle()
-                                .frame(height: 40)
-                                .foregroundColor(AppColors.subTitle.opacity(0.3))
-                                .overlay {
-                                    Image(systemName: "person")
-                                        .resizable()
-                                        .scaledToFit()
-                                        .foregroundColor(AppColors.white)
-
-                                        .frame(height: 15)
-                                }
+                            if let selectedImage {
+                                selectedImage
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                            } else {
+                                Circle()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundColor(AppColors.subTitle.opacity(0.3))
+                                    .overlay {
+                                        Image(systemName: "person")
+                                            .resizable()
+                                            .scaledToFit()
+                                            .foregroundColor(AppColors.white)
+                                            .frame(height: 15)
+                                    }
+                            }
 
                         }
                         
@@ -135,3 +184,4 @@ struct Onboarding2View: View {
 #Preview {
     Onboarding2View()
 }
+
