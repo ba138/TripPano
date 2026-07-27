@@ -99,17 +99,17 @@ struct LoginView: View {
                         }
                         .frame(maxWidth: .infinity,alignment: .leading)
                         Spacer()
-                        Button {
-                            
-                        } label: {
-                        Text("Login")
-                                .font(.system(size: 15))
-                                .bold()
-                                .foregroundColor(.white)
-                                .frame(maxWidth: .infinity,maxHeight: 55)
-                                .background(AppColors.primary)
-                                .cornerRadius(12)
+                        NavigationLink(destination: MainView()){
+                            Text("Login")
+                                    .font(.system(size: 15))
+                                    .bold()
+                                    .foregroundColor(.white)
+                                    .frame(maxWidth: .infinity,maxHeight: 55)
+                                    .background(AppColors.primary)
+                                    .cornerRadius(12)
+
                         }
+
                         
 
                         HStack(spacing: 12) {

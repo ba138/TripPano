@@ -96,7 +96,6 @@ struct MainView: View {
             
             CustomTabBar(selectedTab: $selectedTab)
         }
-        .ignoresSafeArea(.keyboard)
         .navigationBarBackButtonHidden(true)
 
     }

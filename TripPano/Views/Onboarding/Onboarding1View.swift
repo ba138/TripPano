@@ -115,12 +115,15 @@ struct Onboarding1View: View {
                         .cornerRadius(12)
 
             }
+            
+            .padding(.vertical,40)
 
 
 
 
             
         }
+        .ignoresSafeArea()
         .navigationBarBackButtonHidden(true)
             .toolbar(.hidden, for: .navigationBar)
         .padding(.horizontal,20)
