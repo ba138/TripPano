@@ -10,9 +10,14 @@ import SwiftUI
 struct NotificationView: View {
     var body: some View {
         VStack{
-            
+            ScrollView {
+                NotificationCard()
+
+            }
         }
+        .padding(20)
         .navigationTitle("Notifications")
+        
     }
 }
 
