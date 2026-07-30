@@ -101,5 +101,7 @@ struct MainView: View {
     }
 }
 #Preview {
-    MainView()
-}
+    NavigationView {
+        MainView()
+
+    }}
