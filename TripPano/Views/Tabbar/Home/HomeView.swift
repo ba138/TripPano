@@ -22,12 +22,17 @@ struct HomeView: View {
                     .scaledToFit()
                     .frame(width: 80, height: 80)
                 Spacer()
-                Circle()
-                    .frame(width: 40,height: 40)
-                    .foregroundColor(AppColors.subTitle.opacity(0.3))
-                    .overlay {
-                        Image(systemName: "bell")
-                    }
+                NavigationLink {
+                   NotificationView()
+                } label: {
+                    Circle()
+                        .frame(width: 40,height: 40)
+                        .foregroundColor(AppColors.subTitle.opacity(0.3))
+                        .overlay {
+                            Image(systemName: "bell")
+                        }
+                }
+
                 
             }
             SearchBarView(searchText: $searchText)
@@ -91,5 +96,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
-}
+    NavigationView {
+        HomeView()
+
+    }}
