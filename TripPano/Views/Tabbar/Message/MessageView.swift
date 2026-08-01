@@ -11,8 +11,10 @@ struct MessageView: View {
     var body: some View {
 
         VStack{
-            Text("This is message screen")
+MessageCard()
+            
         }
+        .padding()
     }
 }
 
