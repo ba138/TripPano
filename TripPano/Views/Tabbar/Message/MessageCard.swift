@@ -17,9 +17,10 @@ Rectangle()
                 
                 HStack(alignment :.center){
 //                    RoundedRectangle()
-                    Rectangle()
-                        .frame(width: 60,height: 60)
-                        .cornerRadius(30)
+                    Image("chatpro")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 60, height: 60)
                     VStack(alignment : .leading){
                         Text("Basit Ali")
                             .bold()
