@@ -31,7 +31,16 @@ struct MessageView: View {
                 }
 
                 
-            }.padding(.vertical,20)
+            }
+            Text("Message")
+                .font(.system(size: 20))
+                .bold()
+                .foregroundColor(AppColors.fontTitle)
+                .frame(maxWidth: .infinity,alignment: .leading)
+            Text("Your conversations are backed up here")
+                .font(.system(size: 16))
+                .foregroundColor(AppColors.subTitle)
+                .frame(maxWidth: .infinity,alignment: .leading)
             ScrollView(showsIndicators : false) {
                 ForEach(0..<10, id: \.self) { _ in
                     MessageCard()
@@ -40,7 +49,7 @@ struct MessageView: View {
             Spacer()
             
         }
-        .padding(.horizontal,20)
+        .padding(20)
 
         .ignoresSafeArea()
         .toolbar(.hidden, for: .navigationBar)
