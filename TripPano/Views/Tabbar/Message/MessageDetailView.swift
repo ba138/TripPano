@@ -1,17 +1,34 @@
-//
-//  MessageDetailView.swift
-//  TripPano
-//
-//  Created by Basit Ali on 04/08/2026.
-//
-
 import SwiftUI
 
 struct MessageDetailView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+
+        }
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack {
+                    Text("Justine Blake")
+                        .font(.headline)
+
+                    Spacer()
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    // More action
+                } label: {
+                    Image(systemName: "ellipsis")
+                }
+            }
+        }
     }
 }
+
+
 
 #Preview {
     MessageDetailView()
