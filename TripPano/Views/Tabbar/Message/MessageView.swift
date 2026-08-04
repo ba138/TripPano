@@ -44,7 +44,12 @@ struct MessageView: View {
                 
                 
                 ForEach(0..<10, id: \.self) { _ in
-                    MessageCard()
+                    NavigationLink {
+                        MessageDetailView()
+                    } label: {
+                        MessageCard()
+                    }
+//                    .buttonStyle(.plain) // Keeps the card's original appearance
                 }
             }
             .padding(.horizontal, 20)
@@ -58,5 +63,7 @@ struct MessageView: View {
 }
 
 #Preview {
-    MessageView()
-}
+    NavigationView {
+        MessageView()
+
+    }}
