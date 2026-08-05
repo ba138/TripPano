@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MessageView: View {
+struct ContactView: View {
     var body: some View {
         ScrollView(showsIndicators : false){
             VStack{
@@ -47,7 +47,7 @@ struct MessageView: View {
                     NavigationLink {
                         MessageDetailView()
                     } label: {
-                        MessageCard()
+                        ContactCard()
                     }
 //                    .buttonStyle(.plain) // Keeps the card's original appearance
                 }
@@ -64,6 +64,6 @@ struct MessageView: View {
 
 #Preview {
     NavigationView {
-        MessageView()
+        ContactView()
 
     }}

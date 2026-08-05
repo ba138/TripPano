@@ -87,7 +87,7 @@ struct MainView: View {
             case .search:
                 SearchView()
             case .message:
-                MessageView()
+                ContactView()
             case .person:
                 ProfileView()
             }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MessageCard: View {
+struct ContactCard: View {
     var body: some View {
 Rectangle()
             .frame(height: 80)
@@ -38,5 +38,5 @@ Rectangle()
 }
 
 #Preview {
-    MessageCard()
+    ContactCard()
 }
