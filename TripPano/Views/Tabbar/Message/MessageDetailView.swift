@@ -19,13 +19,16 @@ struct MessageDetailView: View {
     ]
 
     var body: some View {
+
         VStack(spacing: 0) {
-            // Chat Messages
+
             ScrollViewReader { proxy in
                 ScrollView {
                     LazyVStack(spacing: 12) {
+
                         ForEach(messages) { msg in
                             HStack {
+
                                 if msg.isMe {
                                     Spacer()
 
@@ -34,7 +37,9 @@ struct MessageDetailView: View {
                                         .background(AppColors.primary)
                                         .foregroundColor(.white)
                                         .clipShape(RoundedRectangle(cornerRadius: 18))
+
                                 } else {
+
                                     Text(msg.text)
                                         .padding()
                                         .background(Color.gray.opacity(0.15))
@@ -56,23 +61,21 @@ struct MessageDetailView: View {
                     }
                 }
             }
+        }
+        .safeAreaInset(edge: .bottom) {
 
-
-            // Bottom Input Bar
             HStack(spacing: 12) {
-                
+
                 Button {
-                    
+
                 } label: {
                     Image(systemName: "plus")
                         .font(.system(size: 24))
                         .bold()
                         .foregroundColor(AppColors.primary)
-                    
                         .frame(width: 45, height: 45)
-                        .clipShape(Circle())
-                    
                 }
+
 
                 TextField("Type a message...", text: $message)
                     .padding(.horizontal, 14)
@@ -80,8 +83,12 @@ struct MessageDetailView: View {
                     .background(Color(.systemGray6))
                     .clipShape(Capsule())
 
+
                 Button {
-                    guard !message.trimmingCharacters(in: .whitespaces).isEmpty else {
+
+                    guard !message
+                        .trimmingCharacters(in: .whitespaces)
+                        .isEmpty else {
                         return
                     }
 
@@ -90,7 +97,9 @@ struct MessageDetailView: View {
                     )
 
                     message = ""
+
                 } label: {
+
                     Image(systemName: "paperplane.fill")
                         .foregroundColor(.white)
                         .frame(width: 45, height: 45)
@@ -101,13 +110,9 @@ struct MessageDetailView: View {
             .padding()
             .background(Color(.systemBackground))
         }
-        .padding(.vertical,20)
-
-        .  ignoresSafeArea()
-
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            
+
             ToolbarItem(placement: .principal) {
                 HStack {
                     Text("Justine Blake")
@@ -118,6 +123,7 @@ struct MessageDetailView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
 
+
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
 
@@ -126,9 +132,9 @@ struct MessageDetailView: View {
                 }
             }
         }
-        
     }
 }
+
 
 #Preview {
     NavigationStack {
