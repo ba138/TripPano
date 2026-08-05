@@ -32,7 +32,7 @@ struct MessageDetailView: View {
 
                                     Text(msg.text)
                                         .padding()
-                                        .background(Color.blue)
+                                        .background(AppColors.primary)
                                         .foregroundColor(.white)
                                         .clipShape(RoundedRectangle(cornerRadius: 18))
                                 } else {
@@ -82,7 +82,7 @@ struct MessageDetailView: View {
                     Image(systemName: "paperplane.fill")
                         .foregroundColor(.white)
                         .frame(width: 45, height: 45)
-                        .background(Color.blue)
+                        .background(AppColors.primary)
                         .clipShape(Circle())
                 }
             }
