@@ -20,7 +20,6 @@ struct MessageDetailView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-
             // Chat Messages
             ScrollViewReader { proxy in
                 ScrollView {
@@ -58,10 +57,23 @@ struct MessageDetailView: View {
                 }
             }
 
-            Divider()
 
             // Bottom Input Bar
             HStack(spacing: 12) {
+                
+                Button {
+                    
+                } label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: 24))
+                        .bold()
+                        .foregroundColor(AppColors.primary)
+                    
+                        .frame(width: 45, height: 45)
+                        .clipShape(Circle())
+                    
+                }
+
                 TextField("Type a message...", text: $message)
                     .padding(.horizontal, 14)
                     .frame(height: 45)
@@ -89,8 +101,13 @@ struct MessageDetailView: View {
             .padding()
             .background(Color(.systemBackground))
         }
+        .padding(.vertical,20)
+
+        .  ignoresSafeArea()
+
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
+            
             ToolbarItem(placement: .principal) {
                 HStack {
                     Text("Justine Blake")
@@ -109,6 +126,7 @@ struct MessageDetailView: View {
                 }
             }
         }
+        
     }
 }
 
