@@ -51,6 +51,12 @@ struct ProfileView: View {
                         )
                 }
                 Spacer()
+                Circle()
+                    .frame(width: 40,height: 40)
+                    .foregroundColor(AppColors.subTitle.opacity(0.3))
+                    .overlay {
+                        Image(systemName: "pencil")
+                    }
                 
             }
             Spacer()
