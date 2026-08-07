@@ -9,7 +9,27 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        Text("Profile View")
+        VStack{
+            HStack{
+                Image("sublogo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 80, height: 80)
+                Spacer()
+                NavigationLink {
+                   NotificationView()
+                } label: {
+                    Circle()
+                        .frame(width: 40,height: 40)
+                        .foregroundColor(AppColors.subTitle.opacity(0.3))
+                        .overlay {
+                            Image(systemName: "bell")
+                        }
+                }
+
+                
+            }
+        }
     }
 }
 
