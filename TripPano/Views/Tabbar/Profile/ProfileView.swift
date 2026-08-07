@@ -69,10 +69,19 @@ struct ProfileView: View {
 
             }
             Rectangle()
-                .frame(width: .infinity,height: 300)
+                .frame(width: .infinity,height: 330)
                 .foregroundColor(AppColors.white)
                 .cornerRadius(12)
                 .shadow(color :AppColors.subTitle.opacity(0.6) , radius: 5,y: 6)
+                .overlay {
+                    VStack{
+                        AccountComponent(leadingIcon: "person.circle", title: "Profile Settings", trailingIcon: "chevron.right")
+                        AccountComponent(leadingIcon: "link", title: "Link", trailingIcon: "chevron.right")
+                        AccountComponent(leadingIcon: "wallet.bifold", title: "Payment", trailingIcon: "chevron.right")
+                        AccountComponent(leadingIcon: "heart", title: "Favorite", trailingIcon: "chevron.right")
+                        AccountComponent(leadingIcon: "mappin.and.ellipse", title: "Trips", trailingIcon: "chevron.right")
+                    }
+                }
                
             
                 
