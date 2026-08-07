@@ -29,7 +29,34 @@ struct ProfileView: View {
 
                 
             }
+            HStack{
+                Circle()
+                    .frame(width: 80,height: 80)
+                    .foregroundColor(AppColors.subTitle.opacity(0.3))
+                    .overlay {
+                        Image(systemName: "person")
+                            .foregroundColor(AppColors.primary)
+                            .font(.system(size: 50))
+                      
+                    }
+                VStack(alignment : .leading){
+                    Text("Basit Ali")
+                        .font(
+                            .system(size: 20)
+                        )
+                        .bold()
+                    Text("xyz@gmail.com")
+                        .font(
+                            .system(size: 16)
+                        )
+                }
+                Spacer()
+                
+            }
+            Spacer()
         }
+        .padding()
+        .ignoresSafeArea()
     }
 }
 
