@@ -59,6 +59,24 @@ struct ProfileView: View {
                     }
                 
             }
+            HStack {
+                Text("Account")
+                    .font(
+                        .system(size: 20)
+                    )
+                    .bold()
+                Spacer()
+
+            }
+            Rectangle()
+                .frame(width: .infinity,height: 300)
+                .foregroundColor(AppColors.white)
+                .cornerRadius(12)
+                .shadow(color :AppColors.subTitle.opacity(0.6) , radius: 5,y: 6)
+               
+            
+                
+            
             Spacer()
         }
         .padding()
