@@ -105,11 +105,11 @@ struct ProfileView: View {
                     .shadow(color :AppColors.subTitle.opacity(0.6) , radius: 5,y: 6)
                     .overlay {
                         VStack(spacing : 0){
-                            AccountComponent(leadingIcon: "person.circle", title: "Profile Settings", trailingIcon: "chevron.right")
-                            AccountComponent(leadingIcon: "link", title: "Link", trailingIcon: "chevron.right")
-                            AccountComponent(leadingIcon: "wallet.bifold", title: "Payment", trailingIcon: "chevron.right")
-                            AccountComponent(leadingIcon: "heart", title: "Favorite", trailingIcon: "chevron.right")
-                            AccountComponent(leadingIcon: "mappin.and.ellipse", title: "Trips", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "bell", title: "Notification", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "mappin.and.ellipse", title: "Location", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "globe.americas", title: "Language", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "character.cursor.ibeam", title: "Fonts", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "globe", title: "App Feedback", trailingIcon: "chevron.right")
                         }
                     }
                    
