@@ -113,9 +113,23 @@ struct ProfileView: View {
                         }
                     }
                    
+              
+                Rectangle()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 100)
                 
+                    .foregroundColor(AppColors.white)
+                    .cornerRadius(12)
+                    .shadow(color :AppColors.subTitle.opacity(0.6) , radius: 5,y: 6)
+                    .overlay {
+                        VStack(spacing : 0){
+                            AccountComponent(leadingIcon: "person.crop.circle.badge.plus", title: "Deactivite Account", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "rectangle.portrait.and.arrow.right", title: "Logout", trailingIcon: "chevron.right")
+                           
+                        }
+                    }
+                    .padding(.vertical)
                 
-                Spacer()
             }
         }
         .padding()
