@@ -64,15 +64,19 @@ struct DetailProfileView: View {
                     .padding()
                     
                 }
-            HStack {
-                Text("Personal Documents")
-                    .bold()
+            NavigationLink(destination: {
+                PersonDetailView()
+            }, label: {
+                HStack {
+                    Text("Personal Documents")
+                        .bold()
 
-                Spacer()
+                    Spacer()
 
-                Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
-            }
+                    Image(systemName: "chevron.right")
+                        .foregroundColor(.gray)
+                }
+            })
             .padding()
             .frame(maxWidth: .infinity)
             .frame(height: 56)
