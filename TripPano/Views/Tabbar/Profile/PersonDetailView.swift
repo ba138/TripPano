@@ -9,7 +9,30 @@ import SwiftUI
 
 struct PersonDetailView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            VStack {
+                PersonalDocTile(title: "ID Card")
+                PersonalDocTile(title: "Driving License")
+                PersonalDocTile(title: "Proof of residence")
+
+                
+            }
+            .padding()
+            .frame(maxWidth: .infinity)
+            .frame(height: 150)
+            
+            .background(AppColors.white)
+            .cornerRadius(10)
+
+            .shadow(
+                color: AppColors.subTitle.opacity(0.6),
+                radius: 5,
+                y: 6
+            )
+            Spacer()
+        }  .navigationTitle(Text("Personal Documents"))
+        .padding()
+       
     }
 }
 
