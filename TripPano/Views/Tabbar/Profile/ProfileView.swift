@@ -84,7 +84,9 @@ struct ProfileView: View {
                     .overlay {
                         VStack(spacing : 0){
                             AccountComponent(leadingIcon: "person.circle", title: "Profile Settings", trailingIcon: "chevron.right")
-                            AccountComponent(leadingIcon: "link", title: "Link", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "link", title: "Link", trailingIcon: "chevron.right",
+                            destination: AnyView(AccountLinkview()) 
+                            )
                             AccountComponent(leadingIcon: "wallet.bifold", title: "Payment", trailingIcon: "chevron.right")
                             AccountComponent(leadingIcon: "heart", title: "Favorite", trailingIcon: "chevron.right")
                             AccountComponent(leadingIcon: "mappin.and.ellipse", title: "Trips", trailingIcon: "chevron.right")
