@@ -10,7 +10,15 @@ import SwiftUI
 struct AccountLinkview: View {
     var body: some View {
         VStack {
-            
+            LinkAccountComponent(
+                imageName: "google",
+                title: "Continue with Google"
+            )
+            LinkAccountComponent(
+                imageName: "facebook",
+                title: "Continue with facebook"
+            )
+            Spacer()
         }
         .navigationTitle(Text("Link Account"))
         .padding()
