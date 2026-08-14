@@ -92,7 +92,10 @@ struct ProfileView: View {
                             AccountComponent(leadingIcon: "wallet.bifold", title: "Payment", trailingIcon: "chevron.right",
                                              destination: AnyView(PaymentView())
                             )
-                            AccountComponent(leadingIcon: "heart", title: "Favorite", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "heart", title: "Favorite", trailingIcon: "chevron.right",
+                                             destination: AnyView(FavoriteView())
+
+                            )
                             AccountComponent(leadingIcon: "mappin.and.ellipse", title: "Trips", trailingIcon: "chevron.right")
                         }
                     }

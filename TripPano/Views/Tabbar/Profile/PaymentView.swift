@@ -10,10 +10,10 @@ import SwiftUI
 struct PaymentView: View {
     var body: some View {
         VStack(spacing : 20){
-            PayementMethodComponent(imageName: "visa", title: "Pay with Apple")
-            PayementMethodComponent(imageName: "applepay", title: "Pay with Apple")
-            PayementMethodComponent(imageName: "paypal", title: "Pay with Apple")
-            PayementMethodComponent(imageName: "stripe", title: "Pay with Apple")
+            PayementMethodComponent(imageName: "visa", title: "Visa/MasterCard")
+            PayementMethodComponent(imageName: "applepay", title: "Apple Pay")
+            PayementMethodComponent(imageName: "paypal", title: "PayPal")
+            PayementMethodComponent(imageName: "stripe", title: "Stripe")
             Spacer()
         }
         .navigationTitle("Chose Payement Method")
