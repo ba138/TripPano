@@ -83,7 +83,9 @@ struct ProfileView: View {
                     .shadow(color :AppColors.subTitle.opacity(0.6) , radius: 5,y: 6)
                     .overlay {
                         VStack(spacing : 0){
-                            AccountComponent(leadingIcon: "person.circle", title: "Profile Settings", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "person.circle", title: "Profile Settings", trailingIcon: "chevron.right",
+                                             destination: AnyView(DetailProfileView()) 
+                            )
                             AccountComponent(leadingIcon: "link", title: "Link", trailingIcon: "chevron.right",
                             destination: AnyView(AccountLinkview()) 
                             )
