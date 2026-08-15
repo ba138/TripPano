@@ -70,11 +70,54 @@ struct HomeDetailView: View {
                 }
                 
             }
-            VStack {
-               
+            HStack {
+                Text("\(home.price)$ per night")
+                    .foregroundColor(AppColors.primary)
+                    .bold()
+                    .underline(color: AppColors.primary)
 
             }
-            .padding(.vertical,10)
+            .frame(maxWidth: .infinity,alignment: .leading)
+            .padding(.vertical,6)
+            HStack {
+                Text("Your Stay")
+                    .font(.system(size: 18))
+                    .bold()
+
+            }.frame(maxWidth: .infinity,alignment: .leading)
+                .padding(.vertical,6)
+            HStack {
+                Text("1 - 16 Dec")
+                    .foregroundColor(AppColors.subTitle)
+                Text("16 days")
+                    .foregroundColor(AppColors.subTitle)
+            }.frame(maxWidth: .infinity,alignment: .leading)
+            HStack {
+                Text("Amenities")
+                    .font(.system(size: 18))
+                    .bold()
+
+            }.frame(maxWidth: .infinity,alignment: .leading)
+                .padding(.vertical,6)
+            HStack {
+                AmenitiesComponent(text : "AC")
+                AmenitiesComponent(text : "Heating")
+                AmenitiesComponent(text : "Wifi")
+                AmenitiesComponent(text : "Free Parking")
+
+
+
+            }
+            HStack {
+                AmenitiesComponent(text : "Kitchen")
+                AmenitiesComponent(text : "Dryer")
+                AmenitiesComponent(text : "Door Alarm")
+
+
+
+            }
+            .frame(maxWidth: .infinity,alignment: .leading)
+              
             Spacer()
 
 
