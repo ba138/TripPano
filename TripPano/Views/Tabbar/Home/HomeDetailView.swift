@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeDetailView: View {
     
     let home: HomeModel
+    @State var isLike : Bool = false
     
     var body: some View {
         VStack {
@@ -28,7 +29,59 @@ struct HomeDetailView: View {
                 .frame(maxWidth: .infinity)
                 .clipped()
                 .cornerRadius(18)
+            HStack {
+                VStack (alignment : .leading){
+                    Text(home.name)
+                        .font(.system(size: 20,weight: .bold
+                                     )
+                        )
+                    Text("Edwin Street, Waterloo,\n London, England")
+                        .foregroundColor(AppColors.subTitle)
+
+                    
+                }
+                .frame(maxWidth: .infinity,alignment: .leading)
+                Button {
+                    withAnimation(.spring()) {
+                        isLike.toggle()
+                    }
+                } label: {
+
+                    Circle()
+                        .fill(
+                            isLike
+                            ? AppColors.primary
+                            : Color.gray.opacity(0.15)
+                        )
+                        .frame(width: 44, height: 44)
+                        .overlay {
+
+                            Image(
+                                systemName: isLike
+                                ? "heart.fill"
+                                : "heart"
+                            )
+                            .foregroundColor(
+                                isLike
+                                ? .white
+                                : AppColors.subTitle
+                            )
+                        }
+                }
+                
+            }
+            VStack {
+               
+
+            }
+            .padding(.vertical,10)
+            Spacer()
+
+
         }
+        
+
+        .padding()
         .navigationTitle(home.name)
         .navigationBarTitleDisplayMode(.inline)
     }
