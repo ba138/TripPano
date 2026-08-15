@@ -2,9 +2,36 @@ import SwiftUI
 
 struct HomeCard: View {
 
-    @State var home: HomeModel
+    @State private var home: HomeModel
+    let destination: AnyView?
+
+    init(
+        home: HomeModel,
+        destination: AnyView? = nil
+    ) {
+        _home = State(initialValue: home)
+        self.destination = destination
+    }
 
     var body: some View {
+
+        Group {
+            if let destination = destination {
+                NavigationLink {
+                    destination
+                } label: {
+                    content
+                }
+                .buttonStyle(.plain)
+            } else {
+                content
+            }
+        }
+    }
+
+    // MARK: - Content
+
+    private var content: some View {
 
         VStack(alignment: .leading, spacing: 12) {
 
@@ -22,7 +49,6 @@ struct HomeCard: View {
             .clipped()
             .cornerRadius(18)
 
-
             HStack(alignment: .top) {
 
                 VStack(alignment: .leading, spacing: 6) {
@@ -39,14 +65,11 @@ struct HomeCard: View {
                         Text("(\(String(format: "%.1f", home.reviews))k Reviews)")
                             .font(.caption)
                             .foregroundColor(AppColors.subTitle)
-
-                        
                     }
                 }
 
                 Spacer()
             }
-
 
             HStack {
 
@@ -56,17 +79,17 @@ struct HomeCard: View {
                     .foregroundColor(AppColors.primary)
                     .padding(.horizontal, 14)
                     .padding(.vertical, 10)
-                    .background(AppColors.primary.opacity(0.12))
+                    .background(
+                        AppColors.primary.opacity(0.12)
+                    )
                     .cornerRadius(10)
 
                 Spacer()
-
 
                 Button {
                     withAnimation(.spring()) {
                         home.isFavorite.toggle()
                     }
-
                 } label: {
 
                     Circle()
@@ -78,10 +101,10 @@ struct HomeCard: View {
                         .frame(width: 44, height: 44)
                         .overlay {
 
-                            Image(systemName:
-                                    home.isFavorite
-                                  ? "heart.fill"
-                                  : "heart"
+                            Image(
+                                systemName: home.isFavorite
+                                ? "heart.fill"
+                                : "heart"
                             )
                             .foregroundColor(
                                 home.isFavorite

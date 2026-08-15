@@ -44,9 +44,16 @@ struct HomeView: View {
                             case .all:
                                 ScrollView (showsIndicators : false){
                                     LazyVStack(spacing: 16) {
-                                        ForEach(controller.homes) { home in
-                                                HomeCard(home: home)
-                                                               
+                                        ForEach(controller.homes.indices, id: \.self) { index in
+
+                                            HomeCard(
+                                                home: controller.homes[index],
+                                                destination: AnyView(
+                                                    HomeDetailView(
+                                                        home: controller.homes[index]
+                                                    )
+                                                )
+                                            )
                                         }
                                                 }
 
@@ -57,9 +64,16 @@ struct HomeView: View {
                             case .beach:
                                 ScrollView (showsIndicators : false){
                                     LazyVStack(spacing: 16) {
-                                        ForEach(controller.homes) { home in
-                                                HomeCard(home: home)
-                                                               
+                                        ForEach(controller.homes.indices, id: \.self) { index in
+
+                                            HomeCard(
+                                                home: controller.homes[index],
+                                                destination: AnyView(
+                                                    HomeDetailView(
+                                                        home: controller.homes[index]
+                                                    )
+                                                )
+                                            )
                                         }
                                                 }
                                                 .padding(.bottom,10)
@@ -67,9 +81,16 @@ struct HomeView: View {
                             case .mountain:
                                 ScrollView (showsIndicators : false){
                                     LazyVStack(spacing: 16) {
-                                        ForEach(controller.homes) { home in
-                                                HomeCard(home: home)
-                                                               
+                                        ForEach(controller.homes.indices, id: \.self) { index in
+
+                                            HomeCard(
+                                                home: controller.homes[index],
+                                                destination: AnyView(
+                                                    HomeDetailView(
+                                                        home: controller.homes[index]
+                                                    )
+                                                )
+                                            )
                                         }
                                                 }
                                                 .padding(.bottom,10)
@@ -77,9 +98,16 @@ struct HomeView: View {
                             case .hotel:
                                 ScrollView (showsIndicators : false){
                                     LazyVStack(spacing: 16) {
-                                        ForEach(controller.homes) { home in
-                                                HomeCard(home: home)
-                                                               
+                                        ForEach(controller.homes.indices, id: \.self) { index in
+
+                                            HomeCard(
+                                                home: controller.homes[index],
+                                                destination: AnyView(
+                                                    HomeDetailView(
+                                                        home: controller.homes[index]
+                                                    )
+                                                )
+                                            )
                                         }
                                                 }
                                                 .padding(.bottom,10)

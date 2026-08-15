@@ -96,7 +96,10 @@ struct ProfileView: View {
                                              destination: AnyView(FavoriteView())
 
                             )
-                            AccountComponent(leadingIcon: "mappin.and.ellipse", title: "Trips", trailingIcon: "chevron.right")
+                            AccountComponent(leadingIcon: "mappin.and.ellipse", title: "Trips", trailingIcon: "chevron.right",
+                                             destination: AnyView(TripsView())
+
+                            )
                         }
                     }
                    
