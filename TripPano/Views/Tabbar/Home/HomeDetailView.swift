@@ -13,13 +13,21 @@ struct HomeDetailView: View {
     
     var body: some View {
         VStack {
-            Text(home.name)
-                .font(.title)
-                .fontWeight(.bold)
             
-            Text(home.price)
-                .font(.headline)
-                .foregroundColor(AppColors.primary)
+
+                AsyncImage(url: URL(string: home.imageURL)) { image in
+                    image
+                        .resizable()
+                        .scaledToFill()
+
+                } placeholder: {
+                    ProgressView()
+                        .frame(maxWidth: .infinity)
+                }
+                .frame(height: 180)
+                .frame(maxWidth: .infinity)
+                .clipped()
+                .cornerRadius(18)
         }
         .navigationTitle(home.name)
         .navigationBarTitleDisplayMode(.inline)
@@ -28,6 +36,6 @@ struct HomeDetailView: View {
 
 #Preview {
     HomeDetailView(
-        home: HomeModel(imageURL: "", name: "Hunza", rating: 12, reviews: 4.5, price: "12", isFavorite: false)
+        home: HomeModel(imageURL: "https://images.unsplash.com/photo-1506744038136-46273834b3fb", name: "Hunza", rating: 12, reviews: 4.5, price: "12", isFavorite: false)
         )
 }
